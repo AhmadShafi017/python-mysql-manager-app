@@ -1,0 +1,2 @@
+# python-mysql-user-manager
+A modular Python-based User Management System featuring robust MySQL integration. This project demonstrates professional backend development practices, including secure data validation using Regular Expressions, automated database and table initialization, and comprehensive CRUD (Create, Read, Update, Delete) operations. It includes advanced features such as bulk data insertion, detailed search filters, and statistical data analysis modules.
