@@ -1,58 +1,38 @@
+import stack as sk
+from pages import DELETE_SINGLE_USER,DELETE_MULTIPLE_USER,DELETE_TABLE,DELETE_DATABASE
 
 
-# Delete
 
-def delete_user(connection):
-
-    x = input("What do you want to delete?\n" \
+def delete(connection,db,stack):
+    x = input("What you want to delete?\n " \
     "1 - User\n" \
-    "2 - Table\n" \
-    "3 - Database")
+    "2 - Multiple users\n" \
+    "3 - Table\n" \
+    "4 - Database\n" \
+    "0 - Back\n" \
+    "")
 
-    cursor = connection.cursor()
+
+    if x == '1':
+        sk.go_to(DELETE_SINGLE_USER,stack)
+        return
+
+    elif x == '2':
+        sk.go_to(DELETE_MULTIPLE_USER,stack)
+        return
+
+    elif x == '3':
+        sk.go_to(DELETE_TABLE,stack)
+        return
+
+    elif x == '4':
+        sk.go_to(DELETE_DATABASE,stack)
+        return
+
+    elif x == '0':
+        sk.go_back(stack)
+        return
     
-    try:
-
-        if x == '1':
-            id = input("Enter User Id : ")
-            query = "DELETE FROM users WHERE id = %s"
-            cursor.execute(query,(id,))
-            connection.commit()
-
-            print(f"✅ User with ID {id} deleted.")
-
-        elif x == "2":
-            table = input("Enter the table name : ")
-
-            confirm = input(f"⚠️ Are you sure to delete table '{table}'?")
-            if confirm.lower() != "yes":
-                print("❌ Operation cancelled.")
-                return
-            
-            query = f"DROP TABLE {table}"
-            cursor.execute(query)
-            connection.commit()
-
-            print(f"✅ Table {table} deleted.")
-
-        elif x == '3':
-            database = input("Enter the Database name : ")
-
-            confirm = input(f"⚠️ Are you sure to delete database {database}?")
-            if confirm.lower() != "yes":
-                print("❌ Operation cancelled.")
-                return
-            query = "DROP DATABASE {database}"
-            cursor.execute(query)
-            connection.commit()
-
-    except Exception as e:
-        print(print("❌ Database error:", e))
-   
-        
-
-
-
-    
-
-  
+    else:
+        print("Invalid Input")
+        return

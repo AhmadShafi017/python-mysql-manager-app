@@ -1,48 +1,31 @@
+import stack as sk
+from pages import SEARCH_ALL_USER,SEARCH_BY_ID,SEARCH_BY_NAME,SEARCH_BY_AGE,SEARCH_BY_EMAIL
 
+def search(connection,db,stack):
 
-# Query all users in Database / Search
-def fetch_users(connection,id = None, name = None, age = None, email = None):
-    
-    condition = []
-    value = []
+    x = input("what do you want to search ?\n" \
+    "1 - All users\n" \
+    "2 - Search by Id\n" \
+    "3 - Search by name\n" \
+    "4 - search by Age\n" \
+    "5 - Search by email\n"
+    "0 - Back\n")
 
+    if x == '1':
+        sk.go_to(SEARCH_ALL_USER,stack)
 
-    if id is not None:
-        condition.append("id = %s")
-        value.append(id)
+    elif x == '2':
+        sk.go_to(SEARCH_BY_ID,stack)
 
-    if name is not None:
-        condition.append("name = %s")
-        value.append(name)
+    elif x == '3':
+        sk.go_to(SEARCH_BY_NAME,stack)
 
-    if age is not None:
-        condition.append("age = %s")
-        value.append(age)
+    elif x == '4':
+        sk.go_to(SEARCH_BY_AGE,stack)
 
-    if email is not None:
-        condition.append("email = %s")
-        value.append(email)
+    elif x == '5':
+        sk.go_to(SEARCH_BY_EMAIL,stack)
 
+    elif x == '0':
+        sk.go_back(stack)
 
-
-    query = """
-        SELECT * FROM users
-    """
-    if condition:
-        query += "WHERE " + "AND ".join(condition) 
-
-    try:
-        cursor = connection.cursor()
-        cursor.execute(query,tuple(value))
-        rows = cursor.fetchall()
-        return rows
-    
-    except Exception as e:
-        print("❌ Search error:",e)
-        return []
-
-
-
-
-
-        
