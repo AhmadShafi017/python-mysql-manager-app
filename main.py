@@ -10,7 +10,7 @@ from pages import (
     DELETE, DELETE_SINGLE_USER, DELETE_MULTIPLE_USER, DELETE_TABLE, DELETE_DATABASE,
     UPDATE, UPDATE_NAME, UPDATE_AGE, UPDATE_EMAIL,
     SEARCH, SEARCH_ALL_USER, SEARCH_BY_ID, SEARCH_BY_NAME, SEARCH_BY_AGE, SEARCH_BY_EMAIL,
-    ANALYTICS, TOTAL_USERS, AVERAGE_AGE
+    ANALYTICS, TOTAL_USERS, AVERAGE_AGE,UPLOAD_FROM_EXCEL,UPLOAD_FROM_CSV,UPLOAD_FROM_JSON
 )
 
 # main pages
@@ -48,6 +48,18 @@ def main():
         elif current_page == ADD_MULTIPLE_USER:
             from add_multiple_user import add_multiple_user
             add_multiple_user(connection, db, stack)
+
+        elif current_page == UPLOAD_FROM_CSV:
+            from upload_from_csv import upload_from_csv
+            upload_from_csv(connection,db,stack)
+
+        elif current_page == UPLOAD_FROM_JSON:
+            from upload_from_json import upload_from_json
+            upload_from_json(connection,db,stack)
+
+        elif current_page == UPLOAD_FROM_EXCEL:
+            from upload_from_excel import upload_from_excel
+            upload_from_excel(connection,db,stack)
 
         # ---------------- DELETE ----------------
         elif current_page == DELETE:

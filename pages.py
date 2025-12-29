@@ -25,6 +25,9 @@ AVERAGE_AGE = "average_age"
 
 ADD_SINGLE_USER = "add_single_user"
 ADD_MULTIPLE_USER = "add_multiple_user"
+UPLOAD_FROM_CSV = "upload_from_csv"
+UPLOAD_FROM_JSON = "upload_from_json"
+UPLOAD_FROM_EXCEL = "upload_from_excel"
 
 
 # =========================
