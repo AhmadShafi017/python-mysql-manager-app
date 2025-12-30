@@ -38,104 +38,104 @@ def main():
 
         # ---------------- ADD ----------------
         elif current_page == ADD:
-            from add import add
+            from add.add import add
             add(connection, db, stack)
 
         elif current_page == ADD_SINGLE_USER:
-            from add_single_user import add_single_user
+            from add.add_single_user import add_single_user
             add_single_user(connection, db, stack)
 
         elif current_page == ADD_MULTIPLE_USER:
-            from add_multiple_user import add_multiple_user
+            from add.add_multiple_user import add_multiple_user
             add_multiple_user(connection, db, stack)
 
         elif current_page == UPLOAD_FROM_CSV:
-            from upload_from_csv import upload_from_csv
+            from upload.upload_from_csv import upload_from_csv
             upload_from_csv(connection,db,stack)
 
         elif current_page == UPLOAD_FROM_JSON:
-            from upload_from_json import upload_from_json
+            from upload.upload_from_json import upload_from_json
             upload_from_json(connection,db,stack)
 
         elif current_page == UPLOAD_FROM_EXCEL:
-            from upload_from_excel import upload_from_excel
+            from upload.upload_from_excel import upload_from_excel
             upload_from_excel(connection,db,stack)
 
         # ---------------- DELETE ----------------
         elif current_page == DELETE:
-            from delete import delete
+            from delete.delete import delete
             delete(connection, db, stack)
 
         elif current_page == DELETE_SINGLE_USER:
-            from delete_single_user import delete_single_user
+            from delete.delete_single_user import delete_single_user
             delete_single_user(connection, db, stack)
 
         elif current_page == DELETE_MULTIPLE_USER:
              
-             from delete_multiple_user import delete_multiple_user
+             from delete.delete_multiple_user import delete_multiple_user
              delete_multiple_user(connection, db, stack)
 
         elif current_page == DELETE_TABLE:
-            from delete_table import delete_table
+            from delete.delete_table import delete_table
             delete_table(connection, db, stack)
 
         elif current_page == DELETE_DATABASE:
-            from delete_database import delete_database
+            from delete.delete_database import delete_database
             delete_database(connection, db, stack)
 
         # ---------------- UPDATE ----------------
         elif current_page == UPDATE:
-            from update import update
+            from update.update import update
             update(connection, db, stack)
 
         elif current_page == UPDATE_NAME:
-            from update_name import update_name
+            from update.update_name import update_name
             update_name(connection, db, stack)
 
         elif current_page == UPDATE_AGE:
-            from update_age import update_age
+            from update.update_age import update_age
             update_age(connection, db, stack)
 
         elif current_page == UPDATE_EMAIL:
-            from update_email import update_email
+            from update.update_email import update_email
             update_email(connection, db, stack)
 
         # ---------------- SEARCH ----------------
         elif current_page == SEARCH:
-            from search import search
+            from search.search import search
             search(connection, db, stack)
 
         elif current_page == SEARCH_ALL_USER:
-            from search_all_users import search_all_user
+            from search.search_all_users import search_all_user
             search_all_user(connection, db, stack)
 
         elif current_page == SEARCH_BY_ID:
-            from search_by_id import search_by_id
+            from search.search_by_id import search_by_id
             search_by_id(connection, db, stack)
 
         elif current_page == SEARCH_BY_NAME:
-            from search_by_name import search_by_name
+            from search.search_by_name import search_by_name
             search_by_name(connection, db, stack)
 
         elif current_page == SEARCH_BY_AGE:
-            from search_by_age import search_by_age
+            from search.search_by_age import search_by_age
             search_by_age(connection, db, stack)
 
         elif current_page == SEARCH_BY_EMAIL:
-            from search_by_email import search_by_email
+            from search.search_by_email import search_by_email
             search_by_email(connection, db, stack)
 
         # ---------------- ANALYTICS ----------------
         elif current_page == ANALYTICS:
-            from analytics import analytics
+            from analytics.analytics import analytics
             analytics(connection, db, stack)
 
         elif current_page == TOTAL_USERS:
-            from total import total_users
+            from analytics.total import total_users
             total_users(connection, db, stack)
 
         elif current_page == AVERAGE_AGE:
-            from average import average_age
+            from analytics.average import average_age
             average_age(connection, db, stack)
 
         # ---------------- FALLBACK ----------------

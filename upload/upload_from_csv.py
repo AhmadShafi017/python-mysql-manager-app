@@ -40,7 +40,7 @@ def upload_from_csv(connection , db, stack):
             #--------INSERT DATA-------------
             query = """
                 INSERT INTO users (name,age,email)
-                VSLUES (%s,%s,%s)
+                VALUES (%s,%s,%s)
             """
 
             data = []
